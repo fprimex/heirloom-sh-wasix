@@ -44,12 +44,12 @@ LNS=ln -s
 #
 # Compiler flags.
 #
-CFLAGS=-O
+#CFLAGS=-O
 
 #
 # Flags for the C preprocessor.
 #
-CFLAGS=-D_GNU_SOURCE
+#CFLAGS=-D_GNU_SOURCE
 
 #
 # A define for large file support, if necessary.
@@ -78,7 +78,8 @@ OBJ = args.o blok.o bltin.o cmd.o ctype.o defs.o echo.o error.o \
 
 .c.o: ; $(CC) -c $(CFLAGS) $(CPPFLAGS) $(LARGEF) $(SPELL) $(WARN) $<
 
-all: sh jsh sh.1.out
+#all: sh jsh sh.1.out
+all: sh
 
 sh: $(OBJ)
 	$(CC) $(LDFLAGS) $(OBJ) $(LIBS) -o sh
