@@ -39,7 +39,8 @@
  */
 
 #include	"defs.h"
-#include	<ucontext.h>
+// WASIX - missing header
+// #include	<ucontext.h>
 #include	<errno.h>
 #include	<string.h>
 

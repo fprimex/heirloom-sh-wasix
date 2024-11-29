@@ -148,7 +148,8 @@ extern "C" {
 #define		ENDARGS		0
 
 /* enable shell accounting */
-#define		ACCT
+// WASIX - avoid problematic code paths
+// #define		ACCT
 
 #include	<unistd.h>
 #include	"mac.h"
