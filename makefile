@@ -74,7 +74,8 @@ OBJ = args.o blok.o bltin.o cmd.o ctype.o defs.o echo.o error.o \
 	expand.o fault.o func.o hash.o hashserv.o io.o jobs.o \
 	macro.o main.o msg.o name.o print.o pwd.o service.o \
 	setbrk.o stak.o string.o test.o ulimit.o word.o xec.o \
-	gmatch.o getopt.o strsig.o version.o mapmalloc.o umask.o
+	gmatch.o getopt.o strsig.o version.o umask.o
+# removed (unused?) mapmalloc.o
 
 .c.o: ; $(CC) -c $(CFLAGS) $(CPPFLAGS) $(LARGEF) $(SPELL) $(WARN) $<
 
@@ -82,7 +83,7 @@ OBJ = args.o blok.o bltin.o cmd.o ctype.o defs.o echo.o error.o \
 all: sh
 
 sh: $(OBJ)
-	$(CC) $(LDFLAGS) $(OBJ) $(LIBS) -o sh
+	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJ) $(LIBS) -o sh
 
 jsh: sh
 	rm -f jsh

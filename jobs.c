@@ -770,7 +770,7 @@ sysjobs(int argc, char *argv[])
 	if ((flags & jcflg) == 0)
 		failed(cmd, nojc);
 
-	while ((c = getopt(argc, argv, "lpx")) != -1) {
+	while ((c = hgetopt(argc, argv, "lpx")) != -1) {
 		if (propts) {
 			failure(usage, jobsuse);
 			goto err;

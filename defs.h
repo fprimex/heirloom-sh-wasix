@@ -183,6 +183,7 @@ extern int		optind;
 extern int		opterr;
 extern int 		getopt_sp;
 extern char 		*optarg;
+int hgetopt(int, char *const *, const char *);
 
 #define	free	sh_free
 

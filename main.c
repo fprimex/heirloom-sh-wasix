@@ -81,9 +81,18 @@ char **execargs = (char **)(-2);
 static void exfile(int);
 
 
+/*
 int 
-main(int c, char *v[], char *e[])
+main(int argc, char *v[], char *e[])
+*/
+int 
+main(int argc, char **argv)
 {
+  int c = argc;
+  const char **v = &argv[0];
+  const char **e = &argv[1];
+	fprintf(stderr, simple(*v));
+	fprintf(stderr, *e);
 	register int	rflag = ttyflg;
 	int		rsflag = 1;	/* local restricted flag */
 	register unsigned char *flagc = flagadr;

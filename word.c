@@ -441,6 +441,7 @@ retry:
 	 * if child sets O_NDELAY or O_NONBLOCK on stdin
 	 * and exited then turn the modes off and retry
 	 */
+#ifndef __wasi__
 	if (len == 0) {
 		if (((flags & intflg) ||
 		    ((flags & oneflg) == 0 && isatty(input) &&
@@ -450,7 +451,9 @@ retry:
 			fcntl(f->fdes, F_SETFL, fflags);
 			goto retry;
 		}
-	} else if (len < 0) {
+	} else
+#endif // __wasi__
+  if (len < 0) {
 		if (errno == EAGAIN) {
 			fflags = fcntl(f->fdes, F_GETFL, 0);
 			fflags &= ~O_NONBLOCK;

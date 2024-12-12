@@ -463,10 +463,10 @@ builtin(int type, int argc, unsigned char **argv, struct trenod *t)
 		optind = stoi(n->namval);
 		if(argc > 3) {
 			argv[2] = dolv[0];
-			getoptval = getopt(argc-2, (char **)&argv[2], (char *)argv[1]);
+			getoptval = hgetopt(argc-2, (char **)&argv[2], (char *)argv[1]);
 		}
 		else
-			getoptval = getopt(dolc+1, (char **)dolv, (char *)argv[1]);
+			getoptval = hgetopt(dolc+1, (char **)dolv, (char *)argv[1]);
 		if(getoptval == -1) {
 			itos(optind);
 			assign(n, numbuf);

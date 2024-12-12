@@ -96,7 +96,7 @@ parse(const char *optstring, const char c)
  * External function entry point.
  */
 int
-getopt(int argc, char *const *argv, const char *optstring)
+hgetopt(int argc, char *const *argv, const char *optstring)
 {
 	char	c;
 	char	*cp;
